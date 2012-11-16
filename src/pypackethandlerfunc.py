@@ -17,7 +17,7 @@ ip4_tos = "0x1"
 ip4_tot_len = "None"
 ip4_id = '30'
 ip4_frag_off = "0"
-ip4_flg = ""
+ip4_flg = "DF"
 ip4_ttl = "32"
 ip4_protocol = "ip" 
 ip4_check = "0x0"
@@ -32,20 +32,20 @@ def eth_keys():
     return eth
 
 def ip4_keys():
-    ip = IP(version=ip4_version, 
+    ipv4 = IP(version=ip4_version, 
     ihl=ip4_ihl, 
     tos=ip4_tos,  
     len=ip4_tot_len,  
     id=ip4_id,  
     frag=ip4_frag_off, 
-#    flags=ip4_flg, 
+    flags=ip4_flg, 
     ttl=ip4_ttl,  
     proto=ip4_protocol, 
     chksum=ip4_check, 
     src=ip4_saddr,
     dst=ip4_daddr)
 
-    return ip4
+    return ipv4
 
 def ip6_keys():
     
@@ -122,6 +122,6 @@ def hsr_keys():
 
 ''' More Testing '''
 
-ip = ip4_keys()
+ipv4 = ip4_keys()
 
-ip.show()
+ipv4.show()

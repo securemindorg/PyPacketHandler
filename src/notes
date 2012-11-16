@@ -1,0 +1,68 @@
+private String[ ] isl_keys = { "-isl_dest", "-isl_type", "-isl_user", "-isl_source", "-isl_length", "-isl_snap", "-isl_hsa", "-isl_vlan",
+								   "-isl_bpdu", "-isl_index", "-isl_reserv" };
+	private String[ ] eth_keys = { "-eth_dest", "-eth_source", "-eth_type" };
+	private String[ ] e1Q_keys = { "-eth_dest", "-eth_source", "-eth_type", "-tagTPID", "-tagPCP", "-tagCFI", "-tagVID" };
+	private String[ ] arp_keys = { "-arp_htype", "-arp_ptype", "-arp_hlen", "-arp_plen", "-arp_oper", "-arp_sha", "-arp_spa", "-arp_tha", "-arp_tpa" };
+	private String[ ] ip4_keys = { "-ip4_version", "-ip4_ihl", "-ip4_tos", "-ip4_tot_len", "-ip4_id", "-ip4_frag_off", "-ip4_flg", "-ip4_ttl",
+								   "-ip4_protocol", "-ip4_check", "-ip4_saddr", "-ip4_daddr" };
+	private String[ ] ip6_keys = { "-ip6_version", "-ip6_tos", "-ip6_flw", "-ip6_plen", "-ip6_nxt", "-ip6_hop", "-ip6_saddr", "-ip6_daddr" };
+	private String[ ] llc_keys = { "-llc_dsap", "-llc_ssap", "-llc_control" };
+	private String[ ] lsn_keys = { "-llc_dsap", "-llc_ssap", "-llc_control", "-snap_orgcode", "-snap_pid" };
+	private String[ ] icm_keys = { "-icmp_type", "-icmp_code", "-icmp_check" };
+	private String[ ] tcp_keys = { "-tcp_source", "-tcp_dest", "-tcp_seq", "-tcp_ack_seq", "-tcp_doff", "-tcp res1", "-tcp_flg", "-tcp_window", 
+			   					   "-tcp_check", "-tcp_urp_ptr"};
+	private String[ ] udp_keys = { "-udp_source", "-udp_dest", "-udp_len", "-udp_chk" };
+	private String[ ] cdp_keys = { "-cdp_version", "-cdp_ttl", "-cdp_check", "-cdp_tlv_t", "-cdp_tlv_l", "-cdp_tlv_v" };
+	private String[ ] dtp_keys = { "-dtp_version", "-dtp_domain", "-dtp_status", "-dtp_type", "-dtp_neighbor" };
+	private String[ ] bpd_keys = { "-bpdu_pid", "-bpdu_version", "-bpdu_type", "-bpdu_flag", "-bpdu_rootID", "-bpdu_rpc", "-bpdu_bridgeID", 
+								   "-bpdu_portID", "-bpdu_messAge", "-bpdu_maxAge", "-bpdu_helloTime", "-bpdu_forwDelay" };
+	private String[ ] vSA_keys = { "-vtp_version", "-vtp_type", "-vtp_rsvd", "-vtp_dnl", "-vtp_dn", "-vtp_crn", "-vtp_updID", "-vtp_updTS", "-vtp_md5" };
+	private String[ ] vSU_keys = { "-vtp_version", "-vtp_type", "-vtp_rsvd", "-vtp_dnl", "-vtp_dn", "-vtp_crn", "-vtp_vInfoL", "-vtp_status", "-vtp_vType", 
+								   "-vtp_vNameL", "-vtp_islVID", "-vtp_mtu", "-vtp_index", "-vtp_vName" };
+	private String[ ] vAR_keys = { "-vtp_version", "-vtp_type", "-vtp_rsvd", "-vtp_dnl", "-vtp_dn", "-vtp_SAR" };
+	private String[ ] vtJ_keys = { "-vtp_version", "-vtp_type", "-vtp_rsvd", "-vtp_dnl", "-vtp_dn", "-vtp_firstV", "-vtp_lastV", "-vtp_AA" };
+	private String[ ] dhc_keys = { "-dhcp_code", "-dhcp_hwtype", "-dhcp_length", "-dhcp_hops", "-dhcp_tranID", "-dhcp_seconds", "-dhcp_flags", 
+								   "-dhcp_clientIP", "-dhcp_yourIP", "-dhcp_serverIP", "-dhcp_routerIP", "-dhcp_clientHA", "-dhcp_serverHN", 
+								   "-dhcp_bootFN", "-dhcp_clv_c", "-dhcp_clv_l", "-dhcp_clv_v" };
+	private String[ ] hsr_keys = { "-hsrp_version", "-hsrp_opCode", "-hsrp_state", "-hsrp_hello", "-hsrp_hold", "-hsrp_priority", "-hsrp_group", 
+								   "-hsrp_rsvd", "-hsrp_authData", "-hsrp_virtualIP" };
+	private String[ ] isl_vals = { "Destination Multicast Address", "Frame Type", "User Defined Bits", "Source MAC Address", "Length", 
+								   "SNAP + LLC field", "High Bits of Source Address", "Destination VLAN ID", "BPDU/CDP/VTP Indicator", 
+								   "Index", "Reserved for Token Ring and FDDI" };
+	private String[ ] eth_vals = { "Destination MAC Address", "Source MAC Address", "EtherType or Length" };
+	private String[ ] e1Q_vals = { "Destination MAC Address", "Source MAC Address", "EtherType or Length", "Tag Protocol Identifier",
+								   "Priority Code Point", "Drop Eligible", "VLAN Identifier" };
+	private String[ ] arp_vals = { "Hardware Type", "Protocol Type", "Hardware Address Length", "Protocol Address Length", "Operation",
+								   "Sender Hardware Address", "Sender Protocol Address", "Target Hardware Address", "Target Protocol Address" };
+	private String[ ] ip4_vals = { "IP Version", "Internet Header Length", "Differentiated Services Code Point", "Explicit Congestion Notification",
+								   "Total Length", "Identification", "Flags", "Fragment Offset", "Time To Live", "Protocol", "Header Checksum", 
+								   "Source IPv4 Address", "Destination IPv4 Address" };
+	private String[ ] ip6_vals = { "IP Version", "Traffic Classification Options", "Flow Label", "Payload Length", "Next Header", "Hop Limit",
+								   "Source IPv6 Address", "Destination IPv6 Address" };
+	private String[ ] llc_vals = { "Destination Service Access Point", "Source Service Access Point", "Service Requested/Supplied" };
+	private String[ ] lsn_vals = { "Destination Service Access Point", "Source Service Access Point", "Service Requested/Supplied", 
+								   "Organizationi Identifier", "EtherType" };
+	private String[ ] icm_vals = { "ICMP Type", "Code", "Checksum" };
+	private String[ ] tcp_vals = { "Source Port", "Destination Port", "Sequence Number", "Acknowledgement Number", "Data Offset", "Reserved", 
+								   "Flags", "Window Size", "Checksum", "Urgent Pointer" };
+	private String[ ] udp_vals = { "Source Port", "Destination Port", "Length", "Checksum" };
+	private String[ ] cdp_vals = { "CDP Version", "Time To Live", "Checksum", "Triplet Type", "Triplet Length", "Triplet Value" };
+	private String[ ] dtp_vals = { "DTP Version", "VTP Domain", "Port Status", "Encapsulation Type", "Sender MAC Address" };
+	private String[ ] bpd_vals = { "Protocol Identifier", "Version", "Message Type", "Flags", "Root ID", "Root Path Cost", "Bridge ID", "Port ID", 
+								   "Message Age", "Maximum Age", "Hello Time", "Forward Delay" };
+	private String[ ] vSA_vals = { "VTP Version", "Message Type", "Subset Advertisement Followers", "VTP Domain Name Length", "VTP Domain Name", 
+								   "Config Revision Number", "Updater ID", "Update Time Stamp", "MD5 Checksum" };
+	private String[ ] vSU_vals = { "VTP Version", "Message Type", "Subset Advertisement Followers", "VTP Domain Name Length", "VTP Domain Name",
+								   "Config Revision Number", "VLAN Info Field Length", "VLAN Status", "VLAN Type", "VLAN Name Length", "VLAN ISL ID", 
+								   "VLAN MTU", "802.10 Index", "VLAN Name" };
+	private String[ ] vAR_vals = { "VTP Version", "Message Type", "Subset Advertisement Followers", "VTP Domain Name Length", "VTP Domain Name",
+								   "VTP Client Request Message" };
+	private String[ ] vtJ_vals = { "VTP Version", "Message Type", "Subset Advertisement Followers", "VTP Domain Name Length", "VTP Domain Name", 
+								   "First VLAN Status", "Last VLAN Status", "Advertised Active VLAN's" };
+	private String[ ] dhc_vals = { "DHCP Message Type", "Hardware Type", "Hardware Address Length", "Router Hop Count", "Transaction ID", 
+								   "Time Elapsed", "DHCP Flags", "Client IP Address", "Server Offered IP Address", "DHCP Server IP Address", 
+								   "Forwarding Router IP Address", "Client MAC Address", "DHCP Server Host Name", "DHCP Boot File Name", 
+								   "DHCP Option Code", "DHCP Option Length", "DHCP Option Value" };
+	private String[ ] hsr_vals = { "HSRP Version", "Operation Code", "Sending Router State", "Hello Time", "Hold Time", "Election Priority", 
+								   "Standby Group", "Reserved", "Password", "Group Virtual IP Address" };
+		
