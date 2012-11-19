@@ -11,6 +11,7 @@ import time
 import multiprocessing
 
 ''' Constants for testing purposes '''
+'''
 ip4_version = "4" 
 ip4_ihl = "None"
 ip4_tos = "0x1"
@@ -23,6 +24,7 @@ ip4_protocol = "ip"
 ip4_check = "0x0"
 ip4_saddr = "172.16.1.1"
 ip4_daddr = "1.1.1.1"
+'''
 
 ###################################################
 ### This defines the actual scripting interface ###
@@ -49,13 +51,38 @@ def ip4_keys():
 
 def ip6_keys():
     
-    return ip6
+    ipv6 = IPv6(version=ip6_version,
+    to=ip6_tos,
+    fl=ip6_flw,
+    plen=ip6_plen,
+    nh=ip6_nxt,
+    hlim=ip6_hop,
+    src=ip6_saddr,
+    dst=ip6_daddr)    
+    
+    return ipv6
     
 def tcp_keys():
+    
+    tcp = TCP(sport=tcp_source,
+    dport=tcp_dest,
+    seq=tcp_seq,
+    ack=tcp_ack_seq,
+    dataofs=tcp_doff,
+    reserved=tcp_res1,
+    flags=tcp_flg,
+    window=tcp_window,
+    chksum=tcp_check,
+    urgptr=tcp_urp_ptr)    
     
     return tcp
 
 def udp_keys():
+    
+    udp=UDP(sport=udp_source,
+    dport=udp_dest,
+    len=udp_len,
+    chksum=udp_chk)    
     
     return udp
     
@@ -72,6 +99,10 @@ def arp_keys():
     return arp
 
 def llc_keys():
+
+    llc=LLC(dsap=llc_dsap,
+    ssap=llc_ssap,
+    ctrl=llc_control)
     
     return llc
 
@@ -121,7 +152,8 @@ def hsr_keys():
 
 
 ''' More Testing '''
-
+'''
 ipv4 = ip4_keys()
 
 ipv4.show()
+'''
