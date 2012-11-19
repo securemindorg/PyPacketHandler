@@ -67,4 +67,17 @@ def ScriptUsage():
 
     '''
 
-ScriptUsage()
+def SplitInputFile():
+    
+    ''' This function defines the input file read and split by packet size '''
+
+    number_of_bytes = 8
+    
+    with open(DEFAULT_FILENAME, 'rb') as f:
+       while 1:
+          byte_s = f.read(number_of_bytes)
+          print byte_s
+          if not byte_s:
+             break
+          byte = byte_s[0]
+            
