@@ -6,10 +6,6 @@ Created on Thursday Nov 12 15:10:20 2012
 
 """
 
-import datetime
-import multiprocessing
-import netifaces
-import os
 from pypackethandlerglobals import *
 from pypackethandlerserverfunc import RunServerMode
 from pypackethandlerpacketfunc import *
@@ -66,7 +62,7 @@ def main(argv):
                 print INTERFACE
                  
             elif option in ("-v", "--version"):
-                print "version"
+                PrintVersion()
  
 if __name__ == "__main__":
     main(sys.argv[1:])

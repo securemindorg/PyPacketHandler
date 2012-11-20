@@ -78,6 +78,19 @@ def ScriptUsage():
 ##############################################################################
 ##############################################################################
 
+def PrintVersion():
+    
+    ''' This function prints version information '''
+
+    print     
+    print "PyPacketHandler Version: ", VERSION    
+    print
+    
+    return 
+
+##############################################################################
+##############################################################################
+
 def SplitInputFile():
     
     ''' This function defines the input file read and split by packet size '''
