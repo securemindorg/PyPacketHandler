@@ -10,7 +10,12 @@ import multiprocessing
 import netifaces
 import os
 from pypackethandlerglobals import *
+from pypackethandlerserverfunc import RunServerMode
+from pypackethandlerpacketfunc import *
 
+
+##############################################################################
+##############################################################################
 
 def GetDateTime():
     
@@ -21,6 +26,9 @@ def GetDateTime():
     ErrorTimeNow = datetime.datetime.now().strftime('%m/%d/%G -- %T - <Error> -')
 
     return InfoTimeNow, WarningTimeNow, ErrorTimeNow
+
+##############################################################################
+##############################################################################
 
 def ScriptUsage():
 
@@ -52,7 +60,7 @@ def ScriptUsage():
         -s / --server               :       Run in Server (Listening) mode
         -c / --script [name]        :       Specify a script
         -f / --file   [name]        :       Specify data to be transported
-        -c / --speed                :       Select the speed to send packets at
+        -d / --speed                :       Select the speed to send packets at
         -l / --logging              :       Enable logging
         -i / --interface [name]     :       Select an interface to transport on
         -v / --version              :       Get the current version information
@@ -66,6 +74,9 @@ def ScriptUsage():
             # python pypackethandler.py -c scriptname.py -f filename.txt -c fast -i em1
 
     '''
+
+##############################################################################
+##############################################################################
 
 def SplitInputFile():
     
